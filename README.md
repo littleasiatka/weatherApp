@@ -72,6 +72,7 @@ Users can search for any city, view detailed current weather, hourly and weekly 
 
 ## 📁 Project Structure
 
+```
 weather-app/
 ├─ backend/
 │ ├─ package.json
@@ -105,6 +106,7 @@ weather-app/
 │ └─ styles.css
 ├─ README.md
 └─ .gitignore
+```
 
 ---
 
