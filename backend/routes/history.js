@@ -6,13 +6,13 @@ const router = express.Router();
 
 const filePath = path.join(__dirname, "..", "data", "history.json");
 
-// Helper to load file
+// to load file
 function loadHistory() {
   const rawData = fs.readFileSync(filePath, "utf-8");
   return JSON.parse(rawData);
 }
 
-// Helper to save file
+// to save file
 function saveHistory(history) {
   fs.writeFileSync(filePath, JSON.stringify(history, null, 2));
 }

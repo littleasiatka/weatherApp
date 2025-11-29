@@ -32,7 +32,7 @@ router.get("/daily/coords", async (req, res) => {
   res.json(data);
 });
 
-// 24h HOURLY
+// 24h 3-HOURLY
 router.get("/forecast", async (req, res) => {
   const city = req.query.city;
   if (!city) return res.status(400).json({ error: "City is required." });
@@ -45,14 +45,14 @@ router.get("/forecast", async (req, res) => {
   }
 });
 
-// 7-DAY DAILY + FULL HOURLY
+// 5-DAYS
 router.get("/daily", async (req, res) => {
   const city = req.query.city;
   if (!city) return res.status(400).json({ error: "City is required." });
 
   try {
     const data = await fetchDailyForecast(city);
-    res.json(data); // <-- now correct
+    res.json(data);
   } catch (error) {
     res.status(500).json({ error: "Could not fetch daily forecast." });
   }

@@ -33,7 +33,7 @@ export default function WeatherCard({ weather }) {
   const windDirection = degToCompass(weather.wind_deg ?? 0);
   const isDay =
     weather.sunrise &&
-    weather.sunset && 
+    weather.sunset &&
     Date.now() / 1000 > weather.sunrise &&
     Date.now() / 1000 < weather.sunset;
   return (

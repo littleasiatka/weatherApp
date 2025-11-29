@@ -8,10 +8,10 @@ export default function Forecast({ hourly, daily }) {
 
   return (
     <div className="forecast">
-      {/* FULL HOURLY FORECAST (24 hours) */}
+      {/* FULL 3-HOURLY FORECAST (24 hours) */}
       {hourly && (
         <>
-          <h3>Hourly Forecast</h3>
+          <h3>3-Hourly Forecast</h3>
           <div className="forecast-list">
             {hourly.slice(0, 8).map((h, i) => (
               <div className="forecast-card" key={i}>
@@ -29,7 +29,7 @@ export default function Forecast({ hourly, daily }) {
       {/* WEEKLY FORECAST */}
       {daily && (
         <>
-          <h3>Next 7 Days</h3>
+          <h3>Next 5 Days</h3>
           <div className="forecast-list">
             {daily.slice(0, 7).map((d, i) => (
               <div className="forecast-card daily-card" key={i}>

@@ -16,13 +16,13 @@ Users can search for any city, view detailed current weather, hourly and weekly 
 ### 📍 Location-Based Weather
 
 - Uses browser geolocation
-- Fetches current weather + 7-day forecast for the user’s coordinates
+- Fetches current weather + 5-day forecast for the user’s coordinates
 - Adds successful location-based results to search history
 
 ### 🕒 Forecast
 
 - 24-hour 3-hourly forecast (free version of OpenWeatherAPI)
-- 7-day daily forecast
+- 5-day daily forecast
 - Uses icons from OpenWeather
 - Automatic icon switching depending on theme (dark/light)
 
@@ -178,9 +178,9 @@ npm run dev
 Endpoint ----- Description
 
 - /api/weather/current?city= ----- Current weather by city name
-- /api/weather/daily?city= ----- 7-day + 3-hourly forecast (city)
+- /api/weather/daily?city= ----- 5-day + 3-hourly forecast (city)
 - /api/weather/current/coords?lat=&lon= ----- Current weather by coordinates
-- /api/weather/daily/coords?lat=&lon= ----- 7-day + 3-hourly forecast by coordinates
+- /api/weather/daily/coords?lat=&lon= ----- 5-day + 3-hourly forecast by coordinates
 - /api/history (GET/POST) ----- Manage search history
 - /api/history/:city (DELETE) ----- Delete history entry
 

@@ -6,12 +6,12 @@ export default function SearchBar({ onSearch, onUseLocation, disabled }) {
   function handleSearch() {
     if (!input.trim()) return; // prevent empty search
     onSearch(input.trim());
-    setInput(""); // <-- clear the search bar
+    setInput(""); // clear the search bar
   }
 
   function handleKeyPress(e) {
     if (e.key === "Enter") {
-      handleSearch(); // <-- search on Enter
+      handleSearch(); // search on Enter
     }
   }
 
@@ -20,7 +20,7 @@ export default function SearchBar({ onSearch, onUseLocation, disabled }) {
       <input
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        onKeyDown={handleKeyPress} // <-- Enter key support
+        onKeyDown={handleKeyPress} // Enter key support
         placeholder="Enter city..."
         disabled={disabled}
       />

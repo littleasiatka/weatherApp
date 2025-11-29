@@ -4,9 +4,7 @@ const axios = require("axios");
 const API_KEY = process.env.OPENWEATHER_API_KEY;
 const BASE_URL = "https://api.openweathermap.org/data/2.5";
 
-// -----------------------------------------------------
 // CURRENT WEATHER
-// -----------------------------------------------------
 async function fetchCurrentWeather(city) {
   const response = await axios.get(`${BASE_URL}/weather`, {
     params: { q: city, appid: API_KEY, units: "metric" },
@@ -86,9 +84,7 @@ async function fetchDailyByCoords(lat, lon) {
   return { hourly, daily };
 }
 
-// -----------------------------------------------------
 // 5-day / 3-hourly forecast (FREE)
-// -----------------------------------------------------
 async function fetchForecast(city) {
   const response = await axios.get(`${BASE_URL}/forecast`, {
     params: { q: city, appid: API_KEY, units: "metric" },
@@ -96,9 +92,6 @@ async function fetchForecast(city) {
   return response.data.list;
 }
 
-// -----------------------------------------------------
-// Build daily + hourly from free forecast
-// -----------------------------------------------------
 async function fetchDailyForecast(city) {
   try {
     const hourly = await fetchForecast(city);
