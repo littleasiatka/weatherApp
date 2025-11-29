@@ -1,7 +1,7 @@
-# 🌦️ Weather App
+# 🌦️ WeatherNow
 
 A full-stack weather application built with **React**, **Express**, and the **OpenWeather API**.  
-Users can search for any city, view detailed current weather, hourly and weekly forecasts, switch between dark/light themes, and fetch weather based on their current location.
+Users can search for any city, view detailed current weather, hourly and weekly forecasts, switch between dark/light themes and fetch weather based on their current location.
 
 ---
 
@@ -23,7 +23,7 @@ Users can search for any city, view detailed current weather, hourly and weekly 
 
 - 24-hour 3-hourly forecast (free version of OpenWeatherAPI)
 - 7-day daily forecast
-- Uses icons from OpenWeather + custom night-theme moon icons
+- Uses icons from OpenWeather
 - Automatic icon switching depending on theme (dark/light)
 
 ### 🗂️ Search History
@@ -52,7 +52,6 @@ Users can search for any city, view detailed current weather, hourly and weekly 
 - CSS (custom styling)
 - Fetch API
 - Geolocation API
-- SVG custom icons
 
 **Backend**
 
