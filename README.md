@@ -1,6 +1,6 @@
 # 🌦️ WeatherNow
 
-A full-stack weather application built with **React**, **Express**, and the **OpenWeather API**.  
+A full-stack weather application built with **React**, **Express** and the **OpenWeather API**.  
 Users can search for any city, view detailed current weather, hourly and weekly forecasts, switch between dark/light themes and fetch weather based on their current location.
 
 ---
@@ -113,6 +113,7 @@ weather-app/
 
 Create a file at `backend/.env`:
 OPENWEATHER_API_KEY=your_api_key_here
+
 ⚠️ Make sure `.env` is in your `.gitignore` so it does **NOT** get pushed to GitHub.  
 Your `.gitignore` (root folder) must include:
 
