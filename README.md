@@ -154,7 +154,7 @@ touch .env
 npm start
 ```
 
-Backend runs on: http://localhost:4000
+> Backend runs on: http://localhost:4000
 
 5️⃣ **Install frontend dependencies**
 
@@ -169,7 +169,7 @@ npm install
 npm run dev
 ```
 
-Frontend runs on: http://localhost:5173
+> Frontend runs on: http://localhost:5173
 
 ## 🧪 How It Works (Technical Breakdown)
 
@@ -187,29 +187,34 @@ Endpoint ----- Description
 ## 🧰 Design Choices
 
 **✔ React for Frontend**
-• Fast rendering
-• Component-based structure
-• Easy state management (useState, useEffect)
+
+- Fast rendering
+- Component-based structure
+- Easy state management (useState, useEffect)
 
 **✔ Express.js Backend**
-• Simple routing
-• Clean API layer between frontend and OpenWeather
-• Hides API key from frontend
+
+- Simple routing
+- Clean API layer between frontend and OpenWeather
+- Hides API key from frontend
 
 **✔ Axios for API Calls**
-• Better error handling
-• Automatic JSON transformation
-• Cleaner syntax
+
+- Better error handling
+- Automatic JSON transformation
+- Cleaner syntax
 
 **✔ Local JSON for History**
-• Suitable for small-scale university projects
-• No complex database required
-• Easy to read and modify
+
+- Suitable for small-scale university projects
+- No complex database required
+- Easy to read and modify
 
 **✔ Custom Night Icons**
-• SVG icons for high resolution
-• Theme-aware (light/dark)
-• Replaces low-quality OpenWeather night icons
+
+- SVG icons for high resolution
+- Theme-aware (light/dark)
+- Replaces low-quality OpenWeather night icons
 
 ## 🐞 Known Issues & Future Improvements
 
