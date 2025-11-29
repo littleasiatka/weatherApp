@@ -116,8 +116,11 @@ Create a file at `backend/.env`:
 OPENWEATHER_API_KEY=your_api_key_here
 ⚠️ Make sure `.env` is in your `.gitignore` so it does **NOT** get pushed to GitHub.  
 Your `.gitignore` (root folder) must include:
+
+```
 backend/.env
 .env
+```
 
 ---
 
@@ -143,8 +146,8 @@ npm install
 touch .env
 ```
 
-Add:
-OPENWEATHER_API_KEY=your_api_key_here
+> Add:
+> OPENWEATHER_API_KEY=your_api_key_here
 
 4️⃣ **Start backend server**
 
