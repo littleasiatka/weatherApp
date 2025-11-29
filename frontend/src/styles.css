@@ -1,0 +1,618 @@
+/* =========================================
+   GLOBAL RESET + THEME
+========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Light mode */
+body {
+  font-family: "Inter", Arial, sans-serif;
+  background: linear-gradient(180deg, #eef4ff, #d9e4ff);
+  color: #111;
+  min-height: 100vh;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+/* Dark mode */
+body.dark {
+  background: linear-gradient(180deg, #0a1a33, #091224 35%, #050b18);
+  color: #e5e5e5;
+}
+/* Dim moon icon in light mode */
+body:not(.dark) img[src*="moon"] {
+  filter: brightness(0.75) contrast(0.85);
+}
+
+/* =========================================
+   APP CONTAINER
+========================================= */
+.app {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 0;
+  animation: fadeIn 0.7s ease forwards;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Title */
+.title {
+  margin-bottom: 1.5rem;
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: -1px;
+}
+
+/* =========================================
+   WELCOME SCREEN
+========================================= */
+.welcome-container {
+  text-align: center;
+  margin-top: 60px;
+  padding: 40px 20px;
+  opacity: 0.85;
+  animation: fadeIn 0.8s ease-in-out;
+}
+.welcome-icon {
+  font-size: 64px;
+  margin-bottom: 10px;
+}
+.welcome-title {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+.welcome-text {
+  font-size: 16px;
+  opacity: 0.8;
+}
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   THEME TOGGLE
+========================================= */
+.theme-toggle-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.dark-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  color: #000;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 14px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+.dark-toggle:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
+}
+body.dark .dark-toggle {
+  background: rgba(15, 25, 50, 0.7);
+  color: #e2e8ff;
+  border-color: #7da2ff;
+}
+body.dark .dark-toggle:hover {
+  box-shadow: 0 0 12px rgba(100, 150, 255, 0.4);
+}
+
+/* =========================================
+   SEARCH BAR
+========================================= */
+.search-bar {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 25px 0;
+  flex-wrap: wrap;
+}
+.search-bar input {
+  width: 70%;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid #ccc;
+  background: white;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+.search-bar button {
+  padding: 14px 20px;
+  border-radius: 14px;
+  border: none;
+  background: #2d80ff;
+  color: white;
+  font-weight: bold;
+  transition: background 0.2s ease, transform 0.2s;
+}
+.search-bar button:hover {
+  background: #1a62d8;
+  transform: translateY(-1px);
+}
+/* Dark mode inputs */
+body.dark .search-bar input {
+  background: #112240;
+  border-color: #1f3a5f;
+  color: #e0e6ff;
+}
+body.dark .search-bar button {
+  background: #4c97ff;
+}
+/* =========================================
+   CARD BASE STYLE
+========================================= */
+.card {
+  width: 100%;
+  background: white;
+  padding: 24px;
+  border-radius: 20px;
+  margin-top: 30px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  animation: fadeUp 0.6s ease;
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+body.dark .card {
+  background: #0f1d39;
+  color: #e5e5e5;
+}
+
+/* =========================================
+   WEATHER CARD (BEAUTIFUL REDESIGN)
+========================================= */
+.weather-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  padding: 28px;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.06);
+  margin-top: 20px;
+
+  animation: slideIn 0.7s ease;
+}
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* layout children */
+.weather-card-left {
+  flex: 0 0 130px;
+}
+.weather-card-center {
+  flex: 1 1 auto;
+  text-align: left;
+}
+.weather-card-right {
+  flex: 0 0 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-end;
+}
+
+/* DARK MODE glass */
+body.dark .weather-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+}
+/* city + temp */
+.city {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.weather-temp {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+/* Weather details */
+.weather-details p {
+  margin: 4px 0;
+  opacity: 0.9;
+}
+/* wind row */
+.wind-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.wind-icon {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.06);
+  transition: transform 0.6s ease;
+  font-size: 1.1rem;
+}
+body.dark .wind-icon {
+  background: rgba(255, 255, 255, 0.04);
+}
+/* sun row */
+.sun-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.sun-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  opacity: 0.95;
+}
+.sun-emoji {
+  font-size: 1.25rem;
+}
+/* small helpers */
+.fc-time {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.fc-temp {
+  font-weight: 700;
+  margin-top: 6px;
+}
+.fc-cond {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+/* daily card variant */
+.daily-card {
+  flex: 0 0 150px;
+}
+/* Weather icon container */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/* ensure images fit */
+.weather-icon img,
+.forecast-card img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+/* Force moon icon to be bright at night */
+.moon-svg path {
+  fill: #f4f6ff !important;
+  opacity: 0.95 !important;
+  stroke: none !important;
+}
+.moon-svg {
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
+}
+
+/* =========================================
+   HISTORY CHIPS
+========================================= */
+.history {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.history-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.history-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s, transform 0.15s;
+}
+.history-chip:hover {
+  background: #dde5ff;
+  transform: translateY(-2px);
+}
+.delete-chip-btn {
+  background: transparent;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.delete-chip-btn:hover {
+  opacity: 1;
+}
+body.dark .history-chip {
+  background: #1a2e4d;
+}
+body.dark .history-chip:hover {
+  background: #243d63;
+}
+body.dark .delete-chip-btn {
+  color: #dde5ff;
+}
+
+/* =========================================s
+   FORECAST — FIXED LIGHT MODE + PERFECT DARK MODE
+========================================= */
+.forecast {
+  margin-top: 40px;
+}
+.forecast-list {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 10px 0;
+  scrollbar-width: none;
+}
+.forecast-list .icon {
+  color: #1a62d8;
+}
+
+.forecast-list::-webkit-scrollbar {
+  display: none;
+}
+/* Light mode */
+.forecast-card {
+  flex: 0 0 140px;
+  background: #ffffffee;
+  border: 1px solid #d9dfff;
+  color: inherit;
+  padding: 1rem;
+  border-radius: 16px;
+  text-align: center;
+  backdrop-filter: blur(4px);
+  transition: transform 0.25s ease;
+}
+.forecast-card:hover {
+  transform: translateY(-4px);
+}
+.forecast-card .img {
+  color: #2d80ff;
+}
+/* Dark mode */
+body.dark .forecast-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+}
+body.dark .forecast-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+.forecast-card img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 8px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.18));
+}
+
+/* =========================================
+--- Loading spinner ---
+========================================= */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
+}
+.spinner {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 6px solid rgba(0, 0, 0, 0.08);
+  border-top-color: #2d80ff;
+  animation: spin 1s linear infinite;
+  box-shadow: 0 6px 18px rgba(45, 128, 255, 0.15);
+}
+body.dark .spinner {
+  border: 6px solid rgba(255, 255, 255, 0.06);
+  border-top-color: #7fb7ff;
+  box-shadow: 0 6px 18px rgba(127, 183, 255, 0.06);
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* =========================================
+--- Clean weather card layout (new) ---
+========================================= */
+.weathercard-clean {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px;
+  margin-top: 20px;
+}
+.wc-left,
+.wc-center,
+.wc-right {
+  display: flex;
+  flex-direction: column;
+}
+.wc-left {
+  flex: 0 0 120px;
+}
+/* LIGHT mode */
+.wc-main-icon {
+  width: 110px;
+  height: 110px;
+  color: #cc3737; /* dark grey/black */
+  opacity: 1;
+}
+/* DARK mode */
+body.dark .wc-main-icon {
+  color: #f8f8ff; /* white */
+}
+.wc-center {
+  flex: 2;
+  text-align: left;
+  gap: 8px;
+}
+.wc-city {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+.wc-temp-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 4px;
+}
+.wc-temp {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.wc-feels {
+  opacity: 0.85;
+  font-size: 1rem;
+}
+.wc-desc {
+  margin-top: 4px;
+  font-size: 1.1rem;
+  opacity: 0.9;
+  text-transform: capitalize;
+}
+.wc-metrics {
+  margin-top: 14px;
+  display: flex;
+  gap: 20px;
+}
+.metric {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.9;
+}
+/* WIND */
+.wind-icon-clear {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wc-right {
+  flex: 1;
+  align-items: flex-end;
+  gap: 18px;
+}
+.sun-block {
+  display: flex;
+  gap: 20px;
+}
+.sun-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.sun-label {
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+/* =========================================
+   RESPONSIVE FIXES
+========================================= */
+@media (max-width: 768px) {
+  .search-bar input {
+    width: 100%;
+  }
+  .dark-toggle {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+  .forecast-card {
+    flex: 0 0 120px;
+  }
+  .title {
+    font-size: 2.2rem;
+  }
+}
+@media (max-width: 480px) {
+  .forecast-card {
+    flex: 0 0 110px;
+    padding: 0.8rem;
+  }
+  .forecast-card img {
+    width: 40px;
+    height: 40px;
+  }
+  .history-chip {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+}
+/* MOBILE RESPONSIVE weather card */
+@media (max-width: 650px) {
+  .weather-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .weather-card-right {
+    align-items: center;
+  }
+  .weather-card-center {
+    width: 100%;
+  }
+  .weather-temp {
+    font-size: 2.4rem;
+  }
+}
