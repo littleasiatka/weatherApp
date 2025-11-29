@@ -131,8 +131,11 @@ cd <your-repo>
 ```
 
 2️⃣ **Install backend dependencies**
+
+```
 cd weatherApp/backend
 npm install
+```
 
 3️⃣ **Add your environment file**
 
