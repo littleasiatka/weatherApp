@@ -111,6 +111,13 @@ weather-app/
 
 ## 🔒 Environment Variables
 
+To use this app, you must create a free account on OpenWeather:
+
+1. Go to https://openweathermap.org/
+2. Create a free account
+3. Generate an API key from your dashboard
+4. Use that key inside `backend/.env`:
+
 Create a file at `backend/.env`:
 OPENWEATHER_API_KEY=your_api_key_here
 ⚠️ Make sure `.env` is in your `.gitignore` so it does **NOT** get pushed to GitHub.  
@@ -128,8 +135,8 @@ backend/.env
 1️⃣ **Clone the repository**
 
 ```bash
-git clone https://github.com/<littleasiatka>/<weatherApp>.git
-cd <weatherApp>
+git clone https://github.com/littleasiatka/weatherApp.git
+cd weatherApp
 ```
 
 2️⃣ **Install backend dependencies**
